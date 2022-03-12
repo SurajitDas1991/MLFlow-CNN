@@ -7,11 +7,11 @@ from src.utils.common import read_yaml, create_directories
 import random
 
 
-STAGE = "STAGE_NAME" ## <<< change stage name 
+STAGE = "STAGE_NAME" ## <<< change stage name
 
 logging.basicConfig(
-    filename=os.path.join("logs", 'running_logs.log'), 
-    level=logging.INFO, 
+    filename=os.path.join("logs", 'running_logs.log'),
+    level=logging.INFO,
     format="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s",
     filemode="a"
     )
