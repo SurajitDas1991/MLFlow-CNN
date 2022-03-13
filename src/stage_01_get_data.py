@@ -4,6 +4,7 @@ import shutil
 from tqdm import tqdm
 import logging
 from src.utils.common import read_yaml, create_directories, unzip_file
+from src.utils.data_management import validate_image
 import random
 import urllib.request as req
 import random
@@ -39,6 +40,9 @@ def main(config_path, params_path):
     unzip_data_dir=config['data']['unzip_data_dir']
     create_directories([unzip_data_dir])
     unzip_file(data_file_path,unzip_data_dir)
+
+    # Validating data
+    validate_image(config)
 
 
 if __name__ == '__main__':
