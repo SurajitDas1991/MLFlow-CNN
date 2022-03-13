@@ -141,3 +141,4 @@ configs/secrets.yaml
 # add your env folder here if its there
 mlruns/
 logs/running_logs.log
+data\bad_data
