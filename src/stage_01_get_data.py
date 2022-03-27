@@ -38,8 +38,11 @@ def main(config_path, params_path):
 
     # Unzip
     unzip_data_dir=config['data']['unzip_data_dir']
-    create_directories([unzip_data_dir])
-    unzip_file(data_file_path,unzip_data_dir)
+    if not os.path.exists(unzip_data_dir):
+        create_directories([unzip_data_dir])
+        unzip_file(data_file_path,unzip_data_dir)
+    else:
+        logging.info(f"Files already available at {unzip_data_dir}")
 
     # Validating data
     validate_image(config)
